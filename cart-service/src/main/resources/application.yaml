@@ -1,0 +1,9 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: cart-service
+  datasource:
+    url: ${CART_DB_URL:jdbc:postgresql://localhost:5433/cart_db}
+    username: ${CART_DB_USER:shop}
+    password: ${CART_DB_PASSWORD:shop}

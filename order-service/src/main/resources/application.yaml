@@ -1,0 +1,12 @@
+server:
+  port: 8083
+spring:
+  application:
+    name: order-service
+  datasource:
+    url: ${ORDER_DB_URL:jdbc:postgresql://localhost:5435/order_db}
+    username: ${ORDER_DB_USER:shop}
+    password: ${ORDER_DB_PASSWORD:shop}
+shop:
+  cart-url: ${CART_SERVICE_URL:http://localhost:8081}
+  inventory-url: ${INVENTORY_SERVICE_URL:http://localhost:8082}

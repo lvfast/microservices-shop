@@ -1,0 +1,9 @@
+server:
+  port: 8082
+spring:
+  application:
+    name: inventory-service
+  datasource:
+    url: ${INVENTORY_DB_URL:jdbc:postgresql://localhost:5434/inventory_db}
+    username: ${INVENTORY_DB_USER:shop}
+    password: ${INVENTORY_DB_PASSWORD:shop}
