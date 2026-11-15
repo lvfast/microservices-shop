@@ -1,0 +1,17 @@
+{
+  "name": "microservices-shop-frontends",
+  "private": true,
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "setup:local": "node scripts/setup-env.mjs",
+    "dev:storefront": "npm run dev -w @shop/storefront",
+    "dev:backoffice": "npm run dev -w @shop/backoffice",
+    "build": "npm run build -w @shop/storefront && npm run build -w @shop/backoffice",
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "vitest": "5.1.0"
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "realm": "shop",
+  "enabled": true,
+  "displayName": "Microservices Shop",
+  "registrationAllowed": false,
+  "loginWithEmailAllowed": true,
+  "roles": {
+    "realm": [
+      { "name": "shop-customer", "description": "Can buy products" },
+      { "name": "shop-admin", "description": "Can access backoffice" }
+    ]
+  },
+  "clients": [
+    {
+      "clientId": "storefront",
+      "name": "Storefront local",
+      "enabled": true,
+      "protocol": "openid-connect",
+      "publicClient": false,
+      "secret": "storefront-local-secret",
+      "standardFlowEnabled": true,
+      "directAccessGrantsEnabled": false,
+      "redirectUris": ["http://localhost:3000/api/auth/callback/keycloak"],
+      "webOrigins": ["http://localhost:3000"]
+    },
+    {
+      "clientId": "backoffice",
+      "name": "Backoffice local",
+      "enabled": true,
+      "protocol": "openid-connect",
+      "publicClient": false,
+      "secret": "backoffice-local-secret",
+      "standardFlowEnabled": true,
+      "directAccessGrantsEnabled": false,
+      "redirectUris": ["http://localhost:3001/api/auth/callback/keycloak"],
+      "webOrigins": ["http://localhost:3001"]
+    }
+  ],
+  "users": [
+    {
+      "username": "customer",
+      "enabled": true,
+      "email": "customer@example.local",
+      "emailVerified": true,
+      "firstName": "Lan",
+      "lastName": "Nguyen",
+      "credentials": [{ "type": "password", "value": "Customer123!", "temporary": false }],
+      "realmRoles": ["shop-customer"]
+    },
+    {
+      "username": "shopadmin",
+      "enabled": true,
+      "email": "admin@example.local",
+      "emailVerified": true,
+      "firstName": "Minh",
+      "lastName": "Tran",
+      "credentials": [{ "type": "password", "value": "Admin123!", "temporary": false }],
+      "realmRoles": ["shop-admin"]
+    }
+  ]
+}
