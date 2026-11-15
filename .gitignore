@@ -1,0 +1,6 @@
+.superpowers/
+.idea/
+.vscode/
+*.iml
+**/target/
+.env
